@@ -15,7 +15,7 @@ class Player:
             print(community_cards)
 
         finally: 
-            return 10
+            return 20
 
     def showdown(self, game_state):
         pass
