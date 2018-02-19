@@ -5,7 +5,7 @@ class Player:
     VERSION = "8"
 
 
-    def firstBetIndex(self, ourHoleCards, betIndex, current_buy_in):
+    def firstBetIndex(self, ourHoleCards, bet_index, current_buy_in):
         if bet_index == 0:
             if (ourHoleCards[0]["rank"]) == (ourHoleCards[1]["rank"]):
                  return 10000
