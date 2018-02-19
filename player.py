@@ -22,6 +22,7 @@ class Player:
 
     
     def betRequest(self, game_state): 
+        return randint(500,1000)
         try:
             betIndex = game_state["bet_index"]
             players = game_state["players"]
