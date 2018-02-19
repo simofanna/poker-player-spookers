@@ -47,6 +47,8 @@ class Player:
             print(str(e))
             print(traceback.print_exc())
             return randint(500,1000)
+        
+        return 100
             
 
     def showdown(self, game_state):
