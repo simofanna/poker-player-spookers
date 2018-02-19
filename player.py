@@ -2,7 +2,8 @@
 class Player:
     VERSION = "0.8"
 
-    def betRequest(self, game_state):    
+    def betRequest(self, game_state): 
+        VERSION = global VERSION
         holeCards = game_state["players"][VERSION]["hole_cards"]
         communityCards = game_state["players"][VERSION]["community_cards"]
 
