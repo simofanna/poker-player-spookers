@@ -3,8 +3,8 @@ class Player:
     VERSION = "0.8"
 
     def betRequest(self, game_state):    
-        holeCards = game_state["hole_cards"]
-        communityCards = game_state["community_cards"]
+        holeCards = game_state["players"][VERSION]["hole_cards"]
+        communityCards = game_state["players"][VERSION]["community_cards"]
 
         try:
             if hole_cards[VERSION][0]["suit"] == hole_cards[VERSION][1]["suit"] or hole_cards[VERSION][0]["rank"] == hole_cards[VERSION][1]["rank"]:
