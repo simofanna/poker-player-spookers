@@ -13,10 +13,11 @@ class Player:
                     
             if ourHoleCards[0]["rank"] == ourHoleCards[1]["rank"]:
                 return 100
-            else: 
-                return 20
+                
         except BaseException:
             print("Error rased , playes: " + players + "our hole cards: " + ourHoleCards)
+        finally:
+            return randint(80,1000)
 
     def showdown(self, game_state):
         pass
