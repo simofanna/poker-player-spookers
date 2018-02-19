@@ -1,6 +1,5 @@
 from random import randint
 
-
 class Player:
     VERSION = "8"
 
