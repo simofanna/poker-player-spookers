@@ -4,7 +4,7 @@ class Player:
     VERSION = "8"
 
 
-    def firstBetIndex(ourHoleCards, betIndex, current_buy_in):
+    def firstBetIndex(self, ourHoleCards, betIndex, current_buy_in):
         if bet_index == 0:
             if ourHoleCards[0]["rank"] == ourHoleCards[1]["rank"]:
                  return 10000
@@ -12,7 +12,7 @@ class Player:
                 return checkIfGotHighCards(ourHoleCard, current_buy_in)
 
 
-    def checkIfGotHighCards(ourHoleCards, current_buy_in):
+    def checkIfGotHighCards(self, ourHoleCards, current_buy_in):
 
         if ("A" in ourHoleCards.values()) or ("K" in ourHoleCards.values()) or ("Q" in ourHoleCards.values()) ("J" in ourHoleCards.values()):
             return current_buy_in
@@ -50,7 +50,7 @@ class Player:
         pass
 
 
-    def checkFromSecondBet(communityCards, ourHoleCards):
+    def checkFromSecondBet(self, communityCards, ourHoleCards):
         if ourHoleCards[0]["rank"] == ourHoleCards[1]["rank"]:
                 for card in community_cards:
                     if (card["rank"] == ourHoleCards[0]["rank"]) or (card["rank"] == ourHoleCards[1]["rank"]):
