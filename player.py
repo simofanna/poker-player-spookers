@@ -43,9 +43,8 @@ class Player:
 
         except BaseException:
             print("Error rased , playes: " + players + "our hole cards: " + ourHoleCards)
-
-        finally:
             return randint(20,100)
+            
 
     def showdown(self, game_state):
         pass
