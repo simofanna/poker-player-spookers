@@ -13,8 +13,6 @@ class Player:
                 return 10
         except ValueError:
             print(community_cards)
-    
-    return 10
 
     def showdown(self, game_state):
         pass
