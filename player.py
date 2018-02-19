@@ -4,35 +4,41 @@ class Player:
     VERSION = "8"
 
 
-    def firstBetIndex(ourHoleCards, betIndex):
+    def firstBetIndex(ourHoleCards, betIndex, current_buy_in):
         if bet_index == 0:
             if ourHoleCards[0]["rank"] == ourHoleCards[1]["rank"]:
-                 return 800
+                 return 10000
             else:
-                checkIfGotHighCards(ourHoleCard)
+                return checkIfGotHighCards(ourHoleCard, current_buy_in)
 
 
-    def checkIfGotHighCards(ourHoleCards):
+    def checkIfGotHighCards(ourHoleCards, current_buy_in):
 
         if ("A" in ourHoleCards.values()) or ("K" in ourHoleCards.values()) or ("Q" in ourHoleCards.values()) ("J" in ourHoleCards.values()):
-            return 400
+            return current_buy_in
         else:
-            return 100
+            return 0
 
-        
-
+    
     def betRequest(self, game_state): 
         try:
             betIndex = game_state["bet_index"]
             players = game_state["players"]
             communityCards = game_state["community_cards"]
-
+            dealer = game_state["dealer"]
+            current_buy_in = game_state["current_buy_in"]
+            
            
             for player in players:
                 if player["name"] == "Spookers": 
                     ourHoleCards = player["hole_cards"]
-
-            firstBetIndex(ourHoleCards, betIndex)
+                    if player["id"] == (dealer+1) % (players.length) or player["id"] == (dealer+2) % (players.length):
+                        if betIndex == 0:
+                            if current_buy_in > player["bet"]:
+                                if firstBetIndex(ourHoleCards, betIndex, current_buy_in) > 0:
+                                    return (current_buy_in - player["bet"])
+                    else:
+                        return firstBetIndex(ourHoleCards, betIndex, current_buy_in)
 
 
         except BaseException:
