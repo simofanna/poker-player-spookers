@@ -22,7 +22,7 @@ class Player:
 
     
     def betRequest(self, game_state): 
-        return randint(30,game_state["current_buy_in"])
+        return randint(30,game_state["current_buy_in"]+100)
         try:
             betIndex = game_state["bet_index"]
             players = game_state["players"]
