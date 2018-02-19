@@ -42,7 +42,7 @@ class Player:
 
 
         except BaseException:
-            print("Error rased , playes: " + players + "our hole cards: " + ourHoleCards)
+            print("Error rased , playes: ")
             return randint(20,100)
             
 
