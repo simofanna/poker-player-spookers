@@ -11,7 +11,7 @@ class Player:
                 return 25
             else: 
                 return 10
-        except ValueError:
+        except BaseEx:
             print(community_cards)
 
         finally: 
