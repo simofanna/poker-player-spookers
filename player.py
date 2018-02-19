@@ -16,7 +16,7 @@ class Player:
     def checkIfGotHighCards(self, ourHoleCards, current_buy_in):
 
         if ("A" in ourHoleCards.values()) or ("K" in ourHoleCards.values()) or ("Q" in ourHoleCards.values()) ("J" in ourHoleCards.values()):
-            return current_buy_in
+            return 10000
         else:
             return 0
 
@@ -46,7 +46,7 @@ class Player:
             print("--------------------------------------------------- E R R O R ---------------------------------------------------")
             print(str(e))
             print(traceback.print_exc())
-            return randint(20,100)
+            return randint(500,1000)
             
 
     def showdown(self, game_state):
