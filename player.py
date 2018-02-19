@@ -3,7 +3,7 @@ class Player:
     VERSION = "0.8"
 
     def betRequest(self, game_state): 
-        VERSION = "0.8"
+        VERSION = 0.8
         holeCards = game_state["players"][VERSION]["hole_cards"]
         communityCards = game_state["players"][VERSION]["community_cards"]
         try:
@@ -11,7 +11,7 @@ class Player:
                 return 25
             else: 
                 return 10
-        except BaseEx:
+        except BaseException:
             print(community_cards)
 
         finally: 
