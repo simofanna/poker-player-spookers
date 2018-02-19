@@ -10,7 +10,7 @@ class Player:
             if ourHoleCards[0]["rank"] == ourHoleCards[1]["rank"]:
                  return 10000
             else:
-                return checkIfGotHighCards(ourHoleCard, current_buy_in)
+                return self.checkIfGotHighCards(ourHoleCard, current_buy_in)
 
 
     def checkIfGotHighCards(self, ourHoleCards, current_buy_in):
@@ -36,10 +36,10 @@ class Player:
                     if player["id"] == (dealer+1) % (len(players)) or player["id"] == (dealer+2) % (len(players)):
                         if betIndex == 0:
                             if current_buy_in > player["bet"]:
-                                if firstBetIndex(ourHoleCards, betIndex, current_buy_in) > 0:
+                                if self.firstBetIndex(ourHoleCards, betIndex, current_buy_in) > 0:
                                     return (current_buy_in - player["bet"])
                     else:
-                        return firstBetIndex(ourHoleCards, betIndex, current_buy_in)
+                        return self.firstBetIndex(ourHoleCards, betIndex, current_buy_in)
 
 
         except Exception, e:
@@ -59,5 +59,5 @@ class Player:
                     if (card["rank"] == ourHoleCards[0]["rank"]) or (card["rank"] == ourHoleCards[1]["rank"]):
                         return 10000
                     else:
-                        return checkIfGotHighCards(ourHoleCards)
-        return checkIfGotHighCards(ourHoleCards)
+                        return self.checkIfGotHighCards(ourHoleCards)
+        return self.checkIfGotHighCards(ourHoleCards)
