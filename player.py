@@ -1,4 +1,5 @@
 from random import randint
+import traceback
 
 class Player:
     VERSION = "8"
@@ -41,8 +42,10 @@ class Player:
                         return firstBetIndex(ourHoleCards, betIndex, current_buy_in)
 
 
-        except BaseException:
-            print("Error rased , playes: ")
+        except Exception, e:
+            print("--------------------------------------------------- E R R O R ---------------------------------------------------")
+            print(str(e))
+            print(traceback.print_exc())
             return randint(20,100)
             
 
