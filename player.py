@@ -7,7 +7,7 @@ class Player:
         holeCards = game_state["players"][VERSION]["hole_cards"]
         communityCards = game_state["players"][VERSION]["community_cards"]
         try:
-            if hole_cards[VERSION][0]["suit"] == hole_cards[VERSION][1]["suit"] or hole_cards[VERSION][0]["rank"] == hole_cards[VERSION][1]["rank"]:
+            if (hole_cards[VERSION][0]["suit"] == hole_cards[VERSION][1]["suit"]) or (hole_cards[VERSION][0]["rank"] == hole_cards[VERSION][1]["rank"]):
                 return 25
             else: 
                 return 10
