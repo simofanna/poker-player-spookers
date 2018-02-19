@@ -33,7 +33,7 @@ class Player:
             for player in players:
                 if player["name"] == "Spookers": 
                     ourHoleCards = player["hole_cards"]
-                    if player["id"] == (dealer+1) % (players.length) or player["id"] == (dealer+2) % (len(players)):
+                    if player["id"] == (dealer+1) % (len(players)) or player["id"] == (dealer+2) % (len(players)):
                         if betIndex == 0:
                             if current_buy_in > player["bet"]:
                                 if firstBetIndex(ourHoleCards, betIndex, current_buy_in) > 0:
