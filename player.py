@@ -10,10 +10,13 @@ class Player:
             for player in players:
                 if player["name"] == "Spookers": 
                     ourHoleCards = player["hole_cards"]
+
                     
             if ourHoleCards[0]["rank"] == ourHoleCards[1]["rank"]:
-                return 100
-                
+                return 10000
+            else:
+                return 0
+
         except BaseException:
             print("Error rased , playes: " + players + "our hole cards: " + ourHoleCards)
         finally:
