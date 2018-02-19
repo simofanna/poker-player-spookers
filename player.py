@@ -1,23 +1,26 @@
+from Random import randint
+
 
 class Player:
     VERSION = "8"
 
     def betRequest(self, game_state): 
-        try:
+    try:
+        players = game_state["players"]
             
-        holeCards = game_state["players"][VERSION]["hole_cards"]
-        communityCards = game_state["players"][VERSION]["community_cards"]
-    
-            if (hole_cards[VERSION][0]["suit"] == hole_cards[VERSION][1]["suit"]) or (hole_cards[VERSION][0]["rank"] == hole_cards[VERSION][1]["rank"]):
-                return 25
+            for player in players:
+                if player["name"] = "Spookers": 
+                    ourHoleCards = player["hole_cards"]
+                    
+            if ourHoleCards[0]["rank"] == ourHoleCards[1]["rank"]:
+                return 100
             else: 
-                return 10
-        except BaseException:
-            print(community_cards)
-            return 
+                return 20
+    except BaseException:
+        print("Error rased , playes: " + players + "our hole cards: " + ourHoleCards)
 
-        finally: 
-            return 20
+    finally:
+        return randint(150,1000)
 
     def showdown(self, game_state):
         pass
