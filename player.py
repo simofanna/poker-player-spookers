@@ -7,7 +7,7 @@ class Player:
 
     def firstBetIndex(self, ourHoleCards, betIndex, current_buy_in):
         if bet_index == 0:
-            if ourHoleCards[0]["rank"] == ourHoleCards[1]["rank"]:
+            if (ourHoleCards[0]["rank"]) == (ourHoleCards[1]["rank"]):
                  return 10000
             else:
                 return self.checkIfGotHighCards(ourHoleCard, current_buy_in)
@@ -15,14 +15,13 @@ class Player:
 
     def checkIfGotHighCards(self, ourHoleCards, current_buy_in):
 
-        if ("A" in ourHoleCards.values()) or ("K" in ourHoleCards.values()) or ("Q" in ourHoleCards.values()) ("J" in ourHoleCards.values()):
+        if ("A" in ourHoleCards.values()) or ("K" in ourHoleCards.values()) or ("Q" in ourHoleCards.values()) or ("J" in ourHoleCards.values()):
             return 10000
         else:
             return 0
 
     
     def betRequest(self, game_state): 
-        return randint(30,game_state["current_buy_in"]+100)
         try:
             betIndex = game_state["bet_index"]
             players = game_state["players"]
@@ -34,11 +33,11 @@ class Player:
             for player in players:
                 if player["name"] == "Spookers": 
                     ourHoleCards = player["hole_cards"]
-                    if player["id"] == (dealer+1) % (len(players)) or player["id"] == (dealer+2) % (len(players)):
+                    if (player["id"] == (dealer+1) % (len(players))) or (player["id"] == (dealer+2) % (len(players))):
                         if betIndex == 0:
                             if current_buy_in > player["bet"]:
-                                if self.firstBetIndex(ourHoleCards, betIndex, current_buy_in) > 0:
-                                    return (current_buy_in - player["bet"])
+                                if (self.firstBetIndex(ourHoleCards, betIndex, current_buy_in)) > 0:
+                                    return ((current_buy_in) - (player["bet"]))
                     else:
                         return self.firstBetIndex(ourHoleCards, betIndex, current_buy_in)
 
